@@ -47,7 +47,7 @@ def classifyImage(image_based_64, file_path = None):
         result.append({
             'class': class_number_to_name(__model.predict(final)[0]),
             'class_probability': np.round(__model.predict_proba(final)*100,2).tolist()[0],
-            'class_dictonary': __class_name_to_number
+            'class_dictionary': __class_name_to_number
 
         })
 

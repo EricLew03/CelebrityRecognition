@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/classify_image', methods= ["GET", "POST"])
 def classify_img():
-    image_data = request.form['Image Data']
+    image_data = request.form['Image_Data']
 
     response = jsonify(util.classifyImage(image_data))
 
@@ -14,6 +14,9 @@ def classify_img():
 
     return response
 
+@app.route('/')
+def hello():
+    return "hello"
 
 if __name__ == "__main__":
     util.load_saved_artifacts()
