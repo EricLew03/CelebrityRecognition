@@ -1,5 +1,5 @@
 import cv2
-import joblib
+import pickle
 import json
 import numpy as np
 import base64
@@ -23,7 +23,7 @@ def load_saved_artifacts():
     global __model
     if __model is None:
         with open("./artifacts/saved_classifier_model.pkl","rb") as f:
-            __model = joblib.load(f)
+            __model = pickle.load(f)
 
 def class_number_to_name(number):
     return __class_number_to_name[number]
